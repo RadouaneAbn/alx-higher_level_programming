@@ -3,4 +3,4 @@
 for idx_ascii in range(97, 123):
     if chr(idx_ascii) == 'q' or chr(idx_ascii) == 'e':
         continue
-    print(chr(idx_ascii), end='')
+    print("{c}".format(c=chr(idx_ascii)), end='')
