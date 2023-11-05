@@ -58,7 +58,8 @@ listint_t *rev_list(listint_t **head, listint_t *current)
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *tmp, *current_1 = *head, *current_2 = NULL;
+	listint_t *tmp, *current_1 = *head, *head_2 = NULL;
+	listint_t *current_2;
 	int len_list, half_list, i;
 
 	if (*head == NULL)
@@ -71,21 +72,21 @@ int is_palindrome(listint_t **head)
 	tmp = *head;
 	for (i = 0; i < half_list; i++)
 		tmp = tmp->next;
-	rev_list(&current_2, tmp);
+	rev_list(&head_2, tmp);
 
 	current_1 = *head;
+	current_2 = head_2;
 
 	for (i = 0; i < half_list; i++)
 	{
 		if (current_1->n != current_2->n)
 		{
-			free_listint(current_2);
+			free_listint(head_2);
 			return (0);
 		}
 		current_1 = current_1->next;
 		current_2 = current_2->next;
 	}
-
-	free_listint(current_2);
+	free_listint(head_2);
 	return (1);
 }
