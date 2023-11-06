@@ -1,53 +1,6 @@
 #include "lists.h"
 
 /**
- * add_node - this function adds a node at the beginning of
- *	a linked list
- * @head: the head of the linked list
- * @n: the integer
- *
- * Return: pointer to the new node
- *	or NULL in case of failure
- */
-
-listint_t *add_node(listint_t **head, int n)
-{
-	listint_t *new = NULL;
-
-	new = malloc(sizeof(listint_t));
-	if (new == NULL)
-		return (NULL);
-
-	new->n = n;
-	new->next = *head;
-	*head = new;
-
-	return (new);
-}
-
-/**
- * rev_list - this function create a reverse list of the given linked list
- * @head: the head of the new linked list
- * @current: pointer to the current node (or head) of
- *	the original linked list
- * Return: pointer to the head of the new reversed linked list
- *	or NULL in case of a failure
- */
-
-listint_t *rev_list(listint_t **head, listint_t *current)
-{
-
-	while (current)
-	{
-		add_node(head, current->n);
-		if (head == NULL)
-			return (NULL);
-		current = current->next;
-	}
-	return (*head);
-}
-
-/**
  * is_palindrome - this is a function that checks
  *	if a linked list is a polindrome
  * @head: the head of the linked list
@@ -58,35 +11,34 @@ listint_t *rev_list(listint_t **head, listint_t *current)
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *tmp, *current_1 = *head, *head_2 = NULL;
-	listint_t *current_2;
-	int len_list, half_list, i;
+	listint_t *fast = *head, *slow = *head;
+	listint_t *new_head = NULL, *tmp;
+	int is_poli = 1;
 
-	if (*head == NULL)
-		return (1);
-	tmp = *head;
-	for (len_list = 0; tmp; len_list++)
-		tmp = tmp->next;
-	half_list = len_list / 2;
+	if (slow == NULL || slow->next == NULL)
+		return (is_poli);
 
-	tmp = *head;
-	for (i = 0; i < half_list; i++)
-		tmp = tmp->next;
-	rev_list(&head_2, tmp);
-
-	current_1 = *head;
-	current_2 = head_2;
-
-	for (i = 0; i < half_list; i++)
+	while (fast && fast->next)
 	{
-		if (current_1->n != current_2->n)
-		{
-			free_listint(head_2);
-			return (0);
-		}
-		current_1 = current_1->next;
-		current_2 = current_2->next;
+		fast = fast->next->next;
+
+		tmp = slow->next;
+		slow->next = new_head;
+		new_head = slow;
+		slow = tmp;
 	}
-	free_listint(head_2);
-	return (1);
+	if (fast != NULL)
+		slow = slow->next;
+
+	while (new_head)
+	{
+		if (new_head->n != slow->n)
+		{
+			is_poli = 0;
+			break;
+		}
+		slow = slow->next;
+		new_head = new_head->next;
+	}
+	return (is_poli);
 }
