@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def complex_delete(a_dictionary, value):
+    if a_dictionary is None or a_dictionary == {}:
+        return {}
     keys = list(a_dictionary.keys())
     values = list(a_dictionary.values())
     idxs = len(values)
