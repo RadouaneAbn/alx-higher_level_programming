@@ -14,6 +14,8 @@ Usage:
     new_square = Square(n) # creates a new instance named new_square
     with a size of n
 """
+
+
 class Square:
     """
     Initializes a new instance of the Square class with a 'size'
