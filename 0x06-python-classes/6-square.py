@@ -106,8 +106,8 @@ class Square:
             TypeError: if value is not a tuple of two positive integers.
 
         """
-        if type(position) is not tuple or len(position) is not 2\
-           or position < (0, 0):
+        if (type(position) is not tuple) or (len(position) is not 2)\
+           or (type(p) is not int for p in position) or (position < (0, 0)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
