@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import math
 """
 Module Name: magic_class
 """
+import math
 
 
 class MagicClass:
