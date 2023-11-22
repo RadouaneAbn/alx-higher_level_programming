@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 Module Name: singly_linked_list
 
@@ -31,7 +30,15 @@ class Node:
         Args:
             data (int): The data.
             next_node (Node, optional): The next node.
+
+        Raises:
+            TypeError: If value is not an integer.
+ 18         TypeError: If value is not a Node.
         """
+        if type(data) is not int:
+            raise TypeError("data must be an integer")
+        if not isinstance(next_node, Node) and next_node is not None:
+            raise TypeError("next_node must be a Node object")
         self.__data = data
         self.__next_node = next_node
 
