@@ -1,10 +1,10 @@
-the ``5-text`` module
+the ``5-text_indentation`` module
 ===============================
 
-using ``print_square``
+using ``text_indentation``
 ------------------------
 
-This a test file for the print_square function:
+This a test file for the text_indentation function:
     >>> text_indentation = __import__('5-text_indentation').text_indentation
 
     >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
