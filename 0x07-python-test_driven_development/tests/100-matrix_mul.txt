@@ -1,10 +1,10 @@
-the ``5-text_indentation`` module
+the ``100-matrix_mul`` module
 ===============================
 
-using ``text_indentation``
+using ``matrix_mul``
 ------------------------
 
-This a test file for the text_indentation function:
+This a test file for the matrix_mul function:
     >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
 
     >>> print(matrix_mul([[-1, 2, -3], [3, -2, 1]], [[4, 5, -6], [-6, 5, -4], [-8, -7, -6]]))
@@ -57,6 +57,16 @@ This a test file for the text_indentation function:
     Traceback (most recent call last):
     ...
     TypeError: m_b must be a list of lists
+
+    >>> print(matrix_mul())
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+    >>> print(matrix_mul([[11]]))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
 
 ==============================================================================================
 
