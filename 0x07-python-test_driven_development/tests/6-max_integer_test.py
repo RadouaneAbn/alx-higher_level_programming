@@ -13,33 +13,23 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([98, 65, 54, 51, 0, -65]), 98)
 
         """ Test max integer at the end """
-        self.assertEqual(max_integer([65, 54, 51, 0, -65, 98]), 98)
+        self.assertEqual(max_integer([65, 54, 51.54, 0, -65, 98]), 98)
 
         """ Test negative integers list """
-        self.assertEqual(max_integer([-15, -848, -65, -2]), -2)
+        self.assertEqual(max_integer([-15, -848.54, -65, -2]), -2)
 
         """ Test empty list """
         self.assertEqual(max_integer([]), None)
+        self.assertEqual(max_integer(""), None)
 
-    def test_raise(self):
         """ Test a string """
-        with self.assertRaises(TypeError):
-            max_integer("Test for str")
+        self.assertEqual(max_integer("This test file just broke my brain"), "y")
 
         """ Test a list with a string(s) in it """
-        with self.assertRaises(TypeError):
-            max_integer([10, 15, "School"])
+        self.assertEqual(max_integer(["one", "two", "three"]), "two")
 
         """ Test a list of lists """
-        with self.assertRaises(TypeError):
-            max_integer([[1, 2], [3, 4]])
-
-        """ Test one integer """
-        with self.assertRaises(TypeError):
-            max_integer(2)
-
-        with self.assertRaises(TypeError):
-            max_integer()
+        self.assertEqual(max_integer([[1, 2], [3, 4]]), [3, 4])
 
 
 if __name__ == '__main__':

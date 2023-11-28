@@ -43,6 +43,16 @@ This a test file for the matrix_divided function:
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+    >>> print(matrix_divided("string", 3))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> print(matrix_divided(3, "string"))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
     =====================================================================
     >>> matrix_3 = [[1, 2, 3], [4, 5]]
 
@@ -57,7 +67,8 @@ This a test file for the matrix_divided function:
     ...
     TypeError: div must be a number
 
-    ========================================
+    =========================================================
+
     >>> print(matrix_divided([[1, 2, 3], "school"], 2))
     Traceback (most recent call last):
     ...

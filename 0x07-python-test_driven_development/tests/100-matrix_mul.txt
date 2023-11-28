@@ -38,6 +38,16 @@ This a test file for the matrix_mul function:
 
     # Test the matrix
 
+    >>> print(matrix_mul())
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+    >>> print(matrix_mul([1, 2]))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
     >>> print(matrix_mul([1, 2, 3], [4, 5, 6]))
     Traceback (most recent call last):
     ...
@@ -119,3 +129,31 @@ This a test file for the matrix_mul function:
     Traceback (most recent call last):
     ...
     ValueError: m_a and m_b can't be multiplied
+
+==============================================================================================
+
+    >>> print(matrix_mul([], [[1, 2]]))
+    Traceback (most recent call last):
+    ValueError: m_a can't be empty
+
+    >>> print(matrix_mul([[1, 2]], [[]]))
+    Traceback (most recent call last):
+    ...
+    ValueError: m_b can't be empty
+
+    >>> print(matrix_mul([[]], []))
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a can't be empty
+
+==============================================================================================
+
+    >>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4, 5]]))
+    Traceback (most recent call last):
+    ...
+    TypeError: each row of m_b must be of the same size
+
+    >>> print(matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4, 5]]))
+    Traceback (most recent call last):
+    ...
+    TypeError: each row of m_a must be of the same size
