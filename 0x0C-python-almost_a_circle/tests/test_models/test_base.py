@@ -7,6 +7,9 @@ import unittest
 
 
 class TestBase(unittest.TestCase):
+    """ Test cases for base class
+    """
+
     def test_Value(self):
         obj_1 = Base()
         obj_2 = Base()
@@ -86,13 +89,11 @@ class TestBase(unittest.TestCase):
         self.assertIsNotNone(tmp)
         self.assertEqual(type(tmp), classmethod)
 
-
-"""
     def test_draw_method(self):
         tmp = Base.__dict__.get("draw")
         self.assertIsNotNone(tmp)
         self.assertEqual(type(tmp), staticmethod)
-"""
+
 
 if __name__ == '__main__':
     unittest.main()
