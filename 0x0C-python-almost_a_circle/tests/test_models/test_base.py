@@ -9,6 +9,11 @@ import unittest
 class TestBase(unittest.TestCase):
     """ Test cases for base class
     """
+    def setUp(self):
+        '''Imports module, instantiates class'''
+        Base._Base__nb_objects = 0
+        pass
+
     def test_Value(self):
         obj_1 = Base()
         obj_2 = Base()
@@ -93,5 +98,6 @@ class TestBase(unittest.TestCase):
         self.assertIsNotNone(tmp)
         self.assertEqual(type(tmp), staticmethod)
 
-        if __name__ == '__main__':
-            unittest.main()
+
+if __name__ == '__main__':
+    unittest.main()
