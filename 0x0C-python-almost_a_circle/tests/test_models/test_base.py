@@ -7,6 +7,8 @@ import unittest
 
 
 class TestBase(unittest.TestCase):
+    """ Test cases for base class
+    """
     def test_Value(self):
         obj_1 = Base()
         obj_2 = Base()
@@ -28,10 +30,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(obj_0.id, 1)
         self.assertIsNotNone(obj_0)
         self.assertIsNotNone(obj_0.id)
-
-    ########################################################
-    #              Test to_json_srting method              #
-    ########################################################
 
     def test_to_json_srting_method(self):
         tmp = Base.__dict__.get("to_json_string")
@@ -62,20 +60,12 @@ class TestBase(unittest.TestCase):
         self.assertEqual(str_1, str_1_exp)
         self.assertEqual(str_m, str_m_exp)
 
-    ########################################################
-    #               Test save_to_file method               #
-    ########################################################
-
     def test_save_to_file_method(self):
         tmp = Base.__dict__.get("save_to_file")
         self.assertIsNotNone(tmp,
                              "Base doesn't have a 'save_to_file' method")
         self.assertEqual(type(tmp), classmethod,
                          "save_to_file is not a classmethod method")
-
-    ########################################################
-    #             Test from_json_string method             #
-    ########################################################
 
     def test_from_json_string_method(self):
         tmp = Base.__dict__.get("from_json_string")
@@ -84,20 +74,12 @@ class TestBase(unittest.TestCase):
         self.assertEqual(type(tmp), staticmethod,
                          "from_json_string is not a staticmethod method")
 
-    ########################################################
-    #                  Test create method                  #
-    ########################################################
-
     def test_create_method(self):
         tmp = Base.__dict__.get("create")
         self.assertIsNotNone(tmp,
                              "Base doesn't have a 'create' method")
         self.assertEqual(type(tmp), classmethod,
                          "create is not a classmethod method")
-
-    ########################################################
-    #              Test load_from_file method              #
-    ########################################################
 
     def test_load_from_file_method(self):
         tmp = Base.__dict__.get("load_from_file")
@@ -106,10 +88,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(type(tmp), classmethod,
                          "load_from_file is not a classmethod method")
 
-    ########################################################
-    #             Test save_to_file_csv method             #
-    ########################################################
-
     def test_save_to_file_csv_method(self):
         tmp = Base.__dict__.get("save_to_file_csv")
         self.assertIsNotNone(tmp,
@@ -117,20 +95,12 @@ class TestBase(unittest.TestCase):
         self.assertEqual(type(tmp), classmethod,
                          "save_to_file_csv is not a classmethod method")
 
-    ########################################################
-    #            Test load_from_file_csv method            #
-    ########################################################
-
     def test_load_from_file_csv_method(self):
         tmp = Base.__dict__.get("load_from_file_csv")
         self.assertIsNotNone(tmp,
                              "Base doesn't have a 'load_from_file_csv' method")
         self.assertEqual(type(tmp), classmethod,
                          "load_from_file_csv is not a classmethod method")
-
-    ########################################################
-    #                   Test draw method                   #
-    ########################################################
 
     def test_draw_method(self):
         tmp = Base.__dict__.get("draw")
