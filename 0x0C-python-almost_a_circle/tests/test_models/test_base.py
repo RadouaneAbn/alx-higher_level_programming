@@ -7,9 +7,6 @@ import unittest
 
 
 class TestBase(unittest.TestCase):
-    """ Test cases for base class
-    """
-
     def test_Value(self):
         obj_1 = Base()
         obj_2 = Base()
