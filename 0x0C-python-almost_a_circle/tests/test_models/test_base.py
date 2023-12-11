@@ -3,7 +3,6 @@
 """
 from models.base import Base
 from inspect import isclass
-import os
 import unittest
 
 
@@ -34,22 +33,18 @@ class TestBase(unittest.TestCase):
     #              Test to_json_srting method              #
     ########################################################
 
-    def test_method(self):
-        """ Check the method
-        """
+    def test_to_json_srting_method(self):
         tmp = Base.__dict__.get("to_json_string")
         self.assertIsNotNone(tmp,
                              "Base doesn't have a 'to_json_string' method")
         self.assertEqual(type(tmp), staticmethod,
                          "to_json_string is not a static method")
 
-        def test_return(self):
-            """ Check for the ouput of the method
-        """
+    def test_to_json_srting_return(self):
         dict_1 = {"x": 1, "y": 2, "id": 18, "width": 10, "height": 20}
         dict_2 = {"x": 4, "y": 5, "id": 45, "width": 24, "height": 21}
         str_1_exp = "{\"x\": 1, \"y\": 2, \"id\": 18, \"width\": 10, \
-                \"height\": 20}"
+\"height\": 20}"
         str_m_exp = "[{\"x\": 1, \"y\": 2, \"id\": 18, \"width\": 10, \
 \"height\": 20}, {\"x\": 4, \"y\": 5, \"id\": 45, \"width\": 24, \
 \"height\": 21}]"
@@ -71,9 +66,7 @@ class TestBase(unittest.TestCase):
     #               Test save_to_file method               #
     ########################################################
 
-    def test_method(self):
-        """ Check the method
-        """
+    def test_save_to_file_method(self):
         tmp = Base.__dict__.get("save_to_file")
         self.assertIsNotNone(tmp,
                              "Base doesn't have a 'save_to_file' method")
@@ -84,9 +77,7 @@ class TestBase(unittest.TestCase):
     #             Test from_json_string method             #
     ########################################################
 
-    def test_method(self):
-        """ Check the method
-        """
+    def test_from_json_string_method(self):
         tmp = Base.__dict__.get("from_json_string")
         self.assertIsNotNone(tmp,
                              "Base doesn't have a 'from_json_string' method")
@@ -97,9 +88,7 @@ class TestBase(unittest.TestCase):
     #                  Test create method                  #
     ########################################################
 
-    def test_method(self):
-        """ Check the method
-        """
+    def test_create_method(self):
         tmp = Base.__dict__.get("create")
         self.assertIsNotNone(tmp,
                              "Base doesn't have a 'create' method")
@@ -110,9 +99,7 @@ class TestBase(unittest.TestCase):
     #              Test load_from_file method              #
     ########################################################
 
-    def test_method(self):
-        """ Check the method
-        """
+    def test_load_from_file_method(self):
         tmp = Base.__dict__.get("load_from_file")
         self.assertIsNotNone(tmp,
                              "Base doesn't have a 'load_from_file' method")
@@ -123,9 +110,7 @@ class TestBase(unittest.TestCase):
     #             Test save_to_file_csv method             #
     ########################################################
 
-    def test_method(self):
-        """ Check the method
-        """
+    def test_save_to_file_csv_method(self):
         tmp = Base.__dict__.get("save_to_file_csv")
         self.assertIsNotNone(tmp,
                              "Base doesn't have a 'save_to_file_csv' method")
@@ -136,9 +121,7 @@ class TestBase(unittest.TestCase):
     #            Test load_from_file_csv method            #
     ########################################################
 
-    def test_method(self):
-        """ Check the method
-        """
+    def test_load_from_file_csv_method(self):
         tmp = Base.__dict__.get("load_from_file_csv")
         self.assertIsNotNone(tmp,
                              "Base doesn't have a 'load_from_file_csv' method")
@@ -149,9 +132,7 @@ class TestBase(unittest.TestCase):
     #                   Test draw method                   #
     ########################################################
 
-    def test_method(self):
-        """ Check the method
-        """
+    def test_draw_method(self):
         tmp = Base.__dict__.get("draw")
         self.assertIsNotNone(tmp,
                              "Base doesn't have a 'draw' method")
