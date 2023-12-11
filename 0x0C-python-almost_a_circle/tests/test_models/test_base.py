@@ -89,13 +89,10 @@ class TestBase(unittest.TestCase):
         self.assertIsNotNone(tmp)
         self.assertEqual(type(tmp), classmethod)
 
-
-"""
     def test_draw_method(self):
         tmp = Base.__dict__.get("draw")
         self.assertIsNotNone(tmp)
         self.assertEqual(type(tmp), staticmethod)
-"""
 
 
 if __name__ == '__main__':
