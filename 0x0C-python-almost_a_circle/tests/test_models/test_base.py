@@ -69,13 +69,13 @@ class TestBase(unittest.TestCase):
         self.assertIsNotNone(tmp)
         self.assertEqual(type(tmp), staticmethod)
 
-
-"""
     def test_create_method(self):
         tmp = Base.__dict__.get("create")
         self.assertIsNotNone(tmp)
         self.assertEqual(type(tmp), classmethod)
 
+
+"""
     def test_load_from_file_method(self):
         tmp = Base.__dict__.get("load_from_file")
         self.assertIsNotNone(tmp)
