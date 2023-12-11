@@ -56,7 +56,6 @@ class Base:
         Dict_list = []
         if list_objs is not None:
             for obj in list_objs:
-                # print("==> {}".format(obj))
                 Dict_list.append(obj.to_dictionary())
 
         with open(file_name, 'w') as f:
@@ -160,6 +159,7 @@ class Base:
 
         return list_inst
 
+    @staticmethod
     def draw(list_rectangles, list_squares):
         """ Draw rectangles and squares on a turtle screen.
 
