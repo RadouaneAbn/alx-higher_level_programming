@@ -37,8 +37,6 @@ class TestBase(unittest.TestCase):
         self.assertIsNotNone(tmp)
         self.assertEqual(type(tmp), staticmethod)
 
-
-"""
     def test_to_json_srting_return(self):
         dict_1 = {"x": 1, "y": 2, "id": 18, "width": 10, "height": 20}
         dict_2 = {"x": 4, "y": 5, "id": 45, "width": 24, "height": 21}
@@ -61,6 +59,8 @@ class TestBase(unittest.TestCase):
         self.assertEqual(str_1, str_1_exp)
         self.assertEqual(str_m, str_m_exp)
 
+
+"""
     def test_save_to_file_method(self):
         tmp = Base.__dict__.get("save_to_file")
         self.assertIsNotNone(tmp)
