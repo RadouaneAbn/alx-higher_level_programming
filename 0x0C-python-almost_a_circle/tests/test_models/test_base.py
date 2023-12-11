@@ -59,8 +59,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(str_1, str_1_exp)
         self.assertEqual(str_m, str_m_exp)
 
-
-"""
     def test_save_to_file_method(self):
         tmp = Base.__dict__.get("save_to_file")
         self.assertIsNotNone(tmp)
@@ -71,6 +69,8 @@ class TestBase(unittest.TestCase):
         self.assertIsNotNone(tmp)
         self.assertEqual(type(tmp), staticmethod)
 
+
+"""
     def test_create_method(self):
         tmp = Base.__dict__.get("create")
         self.assertIsNotNone(tmp)
