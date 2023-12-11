@@ -64,13 +64,13 @@ class TestBase(unittest.TestCase):
         self.assertIsNotNone(tmp)
         self.assertEqual(type(tmp), classmethod)
 
-
-"""
     def test_from_json_string_method(self):
         tmp = Base.__dict__.get("from_json_string")
         self.assertIsNotNone(tmp)
         self.assertEqual(type(tmp), staticmethod)
 
+
+"""
     def test_create_method(self):
         tmp = Base.__dict__.get("create")
         self.assertIsNotNone(tmp)
