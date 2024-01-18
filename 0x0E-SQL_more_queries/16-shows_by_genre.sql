@@ -7,4 +7,4 @@ SELECT ts.title, tg.name
 	ON ts.id = tsg.show_id
 	LEFT JOIN tv_genres tg
 	ON tsg.genre_id = tg.id
-	ORDER BY title ASC;
+	ORDER BY title ASC, name ASC;
