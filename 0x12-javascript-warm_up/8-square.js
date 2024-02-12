@@ -7,8 +7,6 @@ if (isNaN(size)) {
   console.log('Missing size');
 }
 
-let i, j;
-
-for (i = 0; i < size; i++) {
+for (let i = 0; i < size; i++) {
   console.log('X'.repeat(size));
 }
