@@ -9,7 +9,6 @@ Usage:
 if __name__ == "__main__":
     from sys import argv
     import MySQLdb
-    import re
     host_u, port_u = "localhost", 3306
     name_u, password_u, database_u = argv[1:4]
 
