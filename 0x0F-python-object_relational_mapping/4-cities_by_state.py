@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-""" This script takes in an argument <state name> and displays all values
-    in the states table where name matches the arg <state name>
-    but its safe from MySQL injections ;D
+""" This script lists all cities in a database
+
 Usage:
-    3-my_safe_filter_states.py <username> <password> <database> <state name>
+    4-cities_by_state.py <username> <password> <database>
 """
 
 if __name__ == "__main__":
