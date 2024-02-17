@@ -26,7 +26,4 @@ if __name__ == "__main__":
         .filter(func.binary(State.name) == new_state_name)\
         .one()
 
-    if st:
-        print(st[0])
-    else:
-        print('Not found')
+    print(st[0])
