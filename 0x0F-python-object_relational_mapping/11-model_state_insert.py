@@ -23,7 +23,6 @@ if __name__ == "__main__":
     session.commit()
 
     st = session.query(State.id)\
-        .filter(func.binary(State.name) == new_state_name)\
-        .one()
+        .filter(func.binary(State.name) == new_state_name)
 
-    print(st[0])
+    print(st[0][0])
