@@ -17,11 +17,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    total_states = session.query(State).order_by(State.id)
-    for state in total_states:
-        print(state)
+    total_states = session.query(State).all()
 
-        cities_in_state = session.query(City)\
-            .filter(City.state_id == state.id).order_by(City.id)
-        for city in cities_in_state:
-            print("\t{}".format(city))
+    for current_state in total_states:
+        print(current_state)
+        for city in current_state.cities:
+            print(f"\t{city}")
