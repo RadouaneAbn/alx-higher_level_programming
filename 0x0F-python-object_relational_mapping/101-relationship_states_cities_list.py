@@ -17,9 +17,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    total_states = session.query(State).order_by(State.id)
+    # total_states = session.query(State).order_by(State.id)
+    total_states = session.query(State)\
+        .outerjoin(City).order_by(State.id, City.id).all()
 
     for current_state in total_states:
         print(current_state)
         for city in current_state.cities:
-            print(f"    {city.id}: {city.name}")
+            print(f"    {city}")
