@@ -21,3 +21,5 @@ if __name__ == "__main__":
         print(current_state)
         for city in current_state.cities:
             print(f"    {city}")
+
+    session.close()
