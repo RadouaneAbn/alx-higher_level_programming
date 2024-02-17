@@ -5,7 +5,6 @@ from relationship_state import State, Base
 from relationship_city import City
 from sys import argv as av
 from sqlalchemy import (create_engine)
-from sqlalchemy import func, select
 from sqlalchemy.orm import sessionmaker
 
 
@@ -14,6 +13,7 @@ if __name__ == "__main__":
         .format(av[1], av[2], 3306, av[3])
 
     engine = create_engine(engine_info, pool_pre_ping=True)
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
