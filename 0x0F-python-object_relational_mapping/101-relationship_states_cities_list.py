@@ -24,4 +24,4 @@ if __name__ == "__main__":
         cities_in_state = session.query(City)\
             .filter(City.state_id == state.id).order_by(City.id)
         for city in cities_in_state:
-            print("    {}".format(city))
+            print("\t{}".format(city))
