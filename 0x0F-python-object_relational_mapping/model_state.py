@@ -23,3 +23,6 @@ class State(Base):
     id = Column(Integer, nullable=False,
                 primary_key=True, autoincrement=True)
     name = Column(String(128), nullable=False)
+
+    def __repr__(self):
+        return "{}: {}".format(self.id, self.name)
