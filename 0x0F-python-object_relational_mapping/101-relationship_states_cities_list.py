@@ -22,4 +22,4 @@ if __name__ == "__main__":
     for current_state in total_states:
         print(current_state)
         for city in current_state.cities:
-            print(f"    {city}")
+            print(f"    {city.id}: {city.name}")
