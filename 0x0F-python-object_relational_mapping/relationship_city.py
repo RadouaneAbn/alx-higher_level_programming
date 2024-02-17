@@ -24,9 +24,10 @@ class City(Base):
                 primary_key=True, autoincrement=True)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    state = relationship("State", back_populates="cities")
 
     def __init__(self, name):
         self.name = name
 
     def __repr__(self):
-        return f"{self.state_id}: ({self.id}) {self.name}"
+        return f"{self.id}: {self.name}"
