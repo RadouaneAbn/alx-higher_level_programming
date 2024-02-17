@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ This script lists all State objects and corresponding City objects
 """
-from relationship_state import State, Base
+from relationship_state import State
 from relationship_city import City
 from sys import argv as av
 from sqlalchemy import (create_engine)
@@ -13,15 +13,10 @@ if __name__ == "__main__":
         .format(av[1], av[2], 3306, av[3])
 
     engine = create_engine(engine_info, pool_pre_ping=True)
-    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # total_states = session.query(State).order_by(State.id)
-    total_states = session.query(State)\
-        .outerjoin(City).order_by(State.id, City.id).all()
-
-    for current_state in total_states:
+    for current_state in session.query(State).order_by(State.id):
         print(current_state)
         for city in current_state.cities:
             print(f"    {city}")
