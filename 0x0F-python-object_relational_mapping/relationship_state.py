@@ -16,6 +16,7 @@ class State(Base):
         __tablename__ (str): The name of the table.
         id (int): the unique identifier for the state (primary key).
         name (str): The name of the state.
+        cities (relationship): the cities in a state
 
     Usage:
         Define a class that represent a state in a database
@@ -25,11 +26,6 @@ class State(Base):
                 primary_key=True, autoincrement=True)
     name = Column(String(128), nullable=False)
     cities = relationship("City", cascade="all, delete")
-
-    def __init__(self, new_name):
-        """ This method initiate a instance of the class State
-        """
-        self.name = new_name
 
     def __repr__(self):
         """ This method return a string representaion of an instance
