@@ -24,5 +24,12 @@ class State(Base):
                 primary_key=True, autoincrement=True)
     name = Column(String(128), nullable=False)
 
+    def __init__(self, new_name):
+        """ This method initiate a instance of the class State
+        """
+        self.name = new_name
+
     def __repr__(self):
+        """ This method return a string representaion of an instance
+        """
         return "{}: {}".format(self.id, self.name)
