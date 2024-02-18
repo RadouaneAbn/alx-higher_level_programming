@@ -21,6 +21,6 @@ if __name__ == "__main__":
         print(current_state)
         cur_cities = sorted(current_state.cities, key=lambda City: City.id)
         for city in cur_cities:
-            print(f"\t{city}")
+            print(f"    {city}")
 
     session.close()
