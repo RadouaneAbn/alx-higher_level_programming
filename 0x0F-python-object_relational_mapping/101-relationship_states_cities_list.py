@@ -20,6 +20,6 @@ if __name__ == "__main__":
 
     total_states = session.query(State).all()
     for current_state in total_states:
-        print(f"{current_state}")
+        print(f"{current_state.id}: {current_state.name}")
         for city in current_state.cities:
             print(f"    {city}")
