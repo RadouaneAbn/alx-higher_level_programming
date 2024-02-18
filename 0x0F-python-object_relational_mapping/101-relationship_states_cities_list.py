@@ -3,13 +3,14 @@
 """ This script lists all State objects and corresponding City objects
 contained in the database hbtn_0e_101_usa
 """
+from sys import argv as av
+from relationship_state import State
+from relationship_city import City
+from sqlalchemy import (create_engine)
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    from sys import argv as av
-    from relationship_state import State
-    from relationship_city import City
-    from sqlalchemy import (create_engine)
-    from sqlalchemy.orm import sessionmaker
+
     engine_info = 'mysql+mysqldb://{}:{}@localhost:{}/{}'\
         .format(av[1], av[2], 3306, av[3])
 
