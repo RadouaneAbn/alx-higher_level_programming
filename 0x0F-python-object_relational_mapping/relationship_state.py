@@ -27,11 +27,6 @@ class State(Base):
     name = Column(String(128), nullable=False)
     cities = relationship("City", cascade="all, delete")
 
-    def __init__(self, new_name):
-        """ This method initiate a instance of the class State
-        """
-        self.name = new_name
-
     def __repr__(self):
         """ This method return a string representaion of an instance
         """
