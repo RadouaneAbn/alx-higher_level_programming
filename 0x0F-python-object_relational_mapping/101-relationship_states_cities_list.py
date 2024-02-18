@@ -19,8 +19,7 @@ if __name__ == "__main__":
     total_states = session.query(State).order_by(State.id)
     for current_state in total_states:
         print(current_state)
-        cur_cities = sorted(current_state.cities, key=lambda City: City.id)
-        for city in cur_cities:
-            print(f"    {city}")
+        for city in current_state.cities:
+            print(f"    {city.id}: {city.name}")
 
     session.close()
