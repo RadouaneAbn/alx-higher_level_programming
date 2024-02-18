@@ -17,9 +17,9 @@ if __name__ == "__main__":
     session = Session()
 
     total_states = session.query(State).order_by(State.id)
-    for current_state in total_states:
-        print(current_state)
-        for city in current_state.cities:
-            print(f"    {city.id}")
+    # for current_state in total_states:
+    #     print(current_state)
+    #     for city in current_state.cities:
+    #         print(f"    {city.id}")
 
     session.close()
