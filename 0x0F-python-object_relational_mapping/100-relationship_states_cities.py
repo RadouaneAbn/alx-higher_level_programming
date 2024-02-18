@@ -5,7 +5,6 @@ from relationship_state import State, Base
 from relationship_city import City
 from sys import argv as av
 from sqlalchemy import (create_engine)
-from sqlalchemy import func, select
 from sqlalchemy.orm import sessionmaker
 
 
