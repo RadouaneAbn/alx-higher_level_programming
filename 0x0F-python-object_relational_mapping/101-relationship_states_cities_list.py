@@ -20,5 +20,5 @@ if __name__ == "__main__":
     total_states = session.query(State).all()
     for res in total_states:
         print(f"{res.id}: {res.name}")
-        for r in res.cities:
-            print(f"    {r.id}: {r.name}")
+        for city in res.cities:
+            print(f"    {city.id}: {city.name}")
