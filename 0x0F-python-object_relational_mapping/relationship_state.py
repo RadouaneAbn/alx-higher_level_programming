@@ -22,7 +22,7 @@ class State(Base):
         Define a class that represent a state in a database
     """
     __tablename__ = 'states'
-    id = Column(Integer, nullable=False,
+    id = Column(Integer, nullable=False, unique=True,
                 primary_key=True, autoincrement=True)
     name = Column(String(128), nullable=False)
     cities = relationship("City", cascade="all, delete")
