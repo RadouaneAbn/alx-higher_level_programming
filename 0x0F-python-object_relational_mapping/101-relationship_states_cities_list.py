@@ -17,8 +17,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    result = session.query(State).all()
-    for res in result:
+    total_states = session.query(State).all()
+    for res in total_states:
         print(f"{res.id}: {res.name}")
         for r in res.cities:
             print(f"    {r.id}: {r.name}")
