@@ -18,10 +18,10 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    count = 1
+    # count = 1
     result = session.query(State).all()
     for res in result:
         print(f"{res.id}: {res.name}")
         for r in res.cities:
-            print(f"    {count}: {r.name}")
-            count += 1
+            print(f"    {r.id}: {r.name}")
+            # count += 1
