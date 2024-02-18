@@ -24,7 +24,3 @@ class City(Base):
                 primary_key=True, autoincrement=True)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
-
-    def __repr__(self):
-        """ Return a string representation of a city"""
-        return f"{self.id}: {self.name}"
