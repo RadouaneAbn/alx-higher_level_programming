@@ -26,7 +26,3 @@ class State(Base):
                 primary_key=True, autoincrement=True)
     name = Column(String(128), nullable=False)
     cities = relationship("City", cascade="all, delete-orphan")
-
-    def __repr__(self):
-        """ Return a string representaion of a state"""
-        return f"{self.id}: {self.name}"
