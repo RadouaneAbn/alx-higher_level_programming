@@ -6,6 +6,7 @@ import sys
 
 url = sys.argv[1]
 with urllib.request.urlopen(url) as r:
-    request_id = r.headers.get('X-Request-Id', '')
+    headers = r.info()
+    request_id = headers.get('X-Request-Id', '')
     if request_id:
         print(request_id)
