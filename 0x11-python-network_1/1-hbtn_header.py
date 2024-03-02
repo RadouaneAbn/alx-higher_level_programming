@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-# This script prints the value of the X-Request-Id variable found in
-#   the header of a response
+# This script prints the value of the X-Request-Id variable
 
 import urllib.request
 import sys
