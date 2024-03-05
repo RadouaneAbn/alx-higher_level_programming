@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """
-This script contains a fucntion that finds peak in a list of unsorted integers.
+This script contains a fucntion that finds peak in a list integers
 """
 
 
 def find_peak(list_of_integers):
+    """ This function finds the peak """
     if not list_of_integers:
         return None
     left, right = 0, len(list_of_integers) - 1
